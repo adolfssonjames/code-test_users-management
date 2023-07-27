@@ -1,9 +1,9 @@
-import Listedusers from "../components/list/List";
+import List from "../components/list/List";
 export default function Users() {
   return (
     <div>
       <section>
-        <Listedusers />
+        <List />
       </section>
     </div>
   );
