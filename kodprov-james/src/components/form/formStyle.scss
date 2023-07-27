@@ -17,8 +17,6 @@ $defaultBorderRadius: 6px;
     &:hover {
       background-color: $primaryColor;
       cursor: pointer;
-      width: $btnWidth;
-      height: $btnHeight;
     }
   }
 
@@ -30,9 +28,5 @@ $defaultBorderRadius: 6px;
 
     text-align: center;
     width: 195px;
-
-    &:hover {
-      border: 1.5px solid $primaryColor;
-    }
   }
 }
