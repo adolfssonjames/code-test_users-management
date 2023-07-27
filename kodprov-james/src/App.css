@@ -36,7 +36,9 @@
 .card {
   padding: 2em;
 }
-
+.vite-react {
+  margin-top: 3em;
+}
 .read-the-docs {
   color: #888;
 }
