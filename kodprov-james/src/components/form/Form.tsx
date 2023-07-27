@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IFormInputs } from "../../types/formTypes";
 import { postData } from "../../api/requests";
+import "./formStyle.scss";
 export default function Form() {
   const [formData, setFormData] = useState<IFormInputs>({
     userId: 1,
@@ -51,7 +52,7 @@ export default function Form() {
       {validationMessage && (
         <p style={{ color: "#d4281c" }}>{validationMessage}</p>
       )}
-      <section>
+      <section className="form-wrapper">
         <form onSubmit={handleSubmit}>
           <label htmlFor="title">Username</label>
           <div>
@@ -76,7 +77,9 @@ export default function Form() {
             />
           </div>
           <div>
-            <button type="submit">Submit</button>
+            <button className="sumbit-btn" type="submit">
+              Submit
+            </button>
           </div>
         </form>
       </section>

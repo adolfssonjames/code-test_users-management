@@ -1,0 +1,68 @@
+$primaryColor: #646cff;
+$borderColor: rgb(240, 240, 240);
+$backgroundColor: #fcfcfc;
+$defaultFont: 14px;
+$defaultBorderRadius: 6px;
+
+.list-wrapper {
+  padding: 10px;
+  .searchBar-wrapper {
+    text-align: left;
+  }
+  .user-list {
+    border-left: 1.5px solid $borderColor;
+    font-size: medium;
+    padding: 4px 14px;
+    display: flex;
+    flex-direction: row;
+
+    .user-name {
+      padding-right: 5px;
+      margin-block-start: 0em;
+    }
+  }
+}
+
+.dropDown-list {
+  font-size: 13px;
+  padding: 10px 8px 10px 14px;
+  background: $backgroundColor;
+  border: none;
+  border-radius: $defaultBorderRadius;
+  height: 35px;
+  cursor: pointer;
+  &:focus,
+  &:hover {
+    background-color: $primaryColor;
+    cursor: pointer;
+  }
+}
+
+label {
+  font-size: large;
+  cursor: default;
+  margin: 12px 0px 0px 12px;
+}
+
+button {
+  height: 35px;
+  font-size: $defaultFont;
+  font-weight: 600;
+  background-color: #ffffff;
+  border: none;
+  border-radius: $defaultBorderRadius;
+  cursor: pointer;
+  &:hover {
+    background-color: $primaryColor;
+  }
+}
+
+input {
+  border: 1px solid #f1f1f1;
+  border-radius: $defaultBorderRadius;
+  height: 35px;
+  margin-left: 12px;
+  margin-bottom: 10px;
+  font-size: $defaultFont;
+  text-align: center;
+}

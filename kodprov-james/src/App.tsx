@@ -15,7 +15,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <div>
+      <div className="vite-react">
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>

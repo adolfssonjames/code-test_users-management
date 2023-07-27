@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { IUsers } from "../../types/userTypes";
 import { getUsers } from "../../api/requests";
 import { IEvents } from "../../types/eventTypes";
+import "./listStyle.scss";
 
 export default function List() {
   const [usersState, setUsersState] = useState<IUsers[]>([]);
@@ -58,10 +59,10 @@ export default function List() {
     });
 
   return (
-    <div>
+    <div className="list-wrapper">
       <section>
         <h2>{title}</h2>
-        <div>
+        <div className="searchBar-wrapper">
           <input
             type="text"
             value={filter}
@@ -71,6 +72,7 @@ export default function List() {
         </div>
         <label htmlFor="sort-select">Sort by</label>
         <select
+          className="dropDown-list"
           data-testid="sort-by"
           id="sort-select"
           onChange={handleSort}
@@ -86,8 +88,10 @@ export default function List() {
       </section>
       {sortedUsers.length > 0 ? (
         sortedUsers.map((user) => (
-          <section data-testid="user-list" key={user.id}>
-            <p data-testid="user-name">{user.name}</p>{" "}
+          <section className="user-list" data-testid="user-list" key={user.id}>
+            <p className="user-name" data-testid="user-name">
+              {user.name}
+            </p>{" "}
             <a data-testid="user-email" href={`mailto:${user.email}`}>
               {" "}
               {user.email}{" "}
