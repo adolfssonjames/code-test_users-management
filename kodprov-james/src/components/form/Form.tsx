@@ -46,13 +46,13 @@ export default function Form() {
     }
   };
   return (
-    <div>
+    <div className="form-wrapper">
       <h2>Login</h2>
       {successMessage && <p style={{ color: "#646cff" }}>{successMessage}</p>}
       {validationMessage && (
         <p style={{ color: "#d4281c" }}>{validationMessage}</p>
       )}
-      <section className="form-wrapper">
+      <section>
         <form onSubmit={handleSubmit}>
           <label htmlFor="title">Username</label>
           <div>

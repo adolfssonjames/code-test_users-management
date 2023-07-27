@@ -1,6 +1,7 @@
 $primaryColor: #646cff;
 $btnWidth: 201px;
 $btnHeight: 39px;
+$defaultBorderRadius: 6px;
 
 .form-wrapper {
   display: flex;
@@ -22,7 +23,12 @@ $btnHeight: 39px;
   }
 
   input {
+    border-radius: $defaultBorderRadius;
+    height: 35px;
+    margin-left: 12px;
     margin-bottom: 15px;
+
+    text-align: center;
     width: 195px;
 
     &:hover {

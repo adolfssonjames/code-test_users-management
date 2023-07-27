@@ -6,9 +6,46 @@ $defaultBorderRadius: 6px;
 
 .list-wrapper {
   padding: 10px;
-  .searchBar-wrapper {
-    text-align: left;
+
+  > .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    .sort-btns-wrapper,
+    .searchBar {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      justify-self: center;
+      width: 50%;
+    }
+    .searchBar {
+      width: 100%;
+      border: 1px solid #f1f1f1;
+      border-radius: $defaultBorderRadius;
+      height: 35px;
+      font-size: $defaultFont;
+      text-align: center;
+    }
+    .dropDown-list {
+      font-size: 13px;
+      padding: 10px 8px 10px 14px;
+      background: $backgroundColor;
+      border: none;
+      border-radius: $defaultBorderRadius;
+      height: 35px;
+      font-weight: 600;
+      cursor: pointer;
+      &:focus,
+      &:hover {
+        background-color: $primaryColor;
+        cursor: pointer;
+      }
+    }
   }
+
   .user-list {
     border-left: 1.5px solid $borderColor;
     font-size: medium;
@@ -20,21 +57,6 @@ $defaultBorderRadius: 6px;
       padding-right: 5px;
       margin-block-start: 0em;
     }
-  }
-}
-
-.dropDown-list {
-  font-size: 13px;
-  padding: 10px 8px 10px 14px;
-  background: $backgroundColor;
-  border: none;
-  border-radius: $defaultBorderRadius;
-  height: 35px;
-  cursor: pointer;
-  &:focus,
-  &:hover {
-    background-color: $primaryColor;
-    cursor: pointer;
   }
 }
 
@@ -55,14 +77,4 @@ button {
   &:hover {
     background-color: $primaryColor;
   }
-}
-
-input {
-  border: 1px solid #f1f1f1;
-  border-radius: $defaultBorderRadius;
-  height: 35px;
-  margin-left: 12px;
-  margin-bottom: 10px;
-  font-size: $defaultFont;
-  text-align: center;
 }

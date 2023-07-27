@@ -60,31 +60,33 @@ export default function List() {
 
   return (
     <div className="list-wrapper">
-      <section>
+      <section className="top">
         <h2>{title}</h2>
-        <div className="searchBar-wrapper">
+        <div className="sort-btns-wrapper">
           <input
             type="text"
             value={filter}
+            className="searchBar"
             onChange={handleFilter}
             placeholder="search user"
           />
+          <label htmlFor="sort-select">Sort by</label>
+
+          <select
+            className="dropDown-list"
+            data-testid="sort-by"
+            id="sort-select"
+            onChange={handleSort}
+            value={sortBy}
+          >
+            <option value="name">Name</option>
+            <option value="email">Email</option>
+          </select>
+          <label htmlFor="sort-direction">Sort direction</label>
+          <button data-testid="sort-direction" onClick={handleSortDirection}>
+            {sortDirection === "asc" ? "Ascending" : "Descending"}
+          </button>
         </div>
-        <label htmlFor="sort-select">Sort by</label>
-        <select
-          className="dropDown-list"
-          data-testid="sort-by"
-          id="sort-select"
-          onChange={handleSort}
-          value={sortBy}
-        >
-          <option value="name">Name</option>
-          <option value="email">Email</option>
-        </select>
-        <label htmlFor="sort-direction">Sort direction</label>
-        <button data-testid="sort-direction" onClick={handleSortDirection}>
-          {sortDirection === "asc" ? "Ascending" : "Descending"}
-        </button>
       </section>
       {sortedUsers.length > 0 ? (
         sortedUsers.map((user) => (
