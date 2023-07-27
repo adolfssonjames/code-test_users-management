@@ -1,11 +1,12 @@
-import List from "../components/list/List";
+import Form from "../components/form/Form";
 import Nav from "../components/nav/Nav";
-export default function Users() {
+
+export default function login() {
   return (
     <div>
       <section>
         <Nav />
-        <List />
+        <Form />
       </section>
     </div>
   );
