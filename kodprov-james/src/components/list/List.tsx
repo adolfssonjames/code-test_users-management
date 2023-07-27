@@ -70,20 +70,28 @@ export default function List() {
           />
         </div>
         <label htmlFor="sort-select">Sort by</label>
-        <select id="sort-select" onChange={handleSort} value={sortBy}>
+        <select
+          data-testid="sort-by"
+          id="sort-select"
+          onChange={handleSort}
+          value={sortBy}
+        >
           <option value="name">Name</option>
           <option value="email">Email</option>
         </select>
         <label htmlFor="sort-direction">Sort direction</label>
-        <button onClick={handleSortDirection}>
+        <button data-testid="sort-direction" onClick={handleSortDirection}>
           {sortDirection === "asc" ? "Ascending" : "Descending"}
         </button>
       </section>
       {sortedUsers.length > 0 ? (
         sortedUsers.map((user) => (
-          <section key={user.id}>
-            <p>{user.name}</p>{" "}
-            <a href={`mailto:${user.email}`}> {user.email} </a>
+          <section data-testid="user-list" key={user.id}>
+            <p data-testid="user-name">{user.name}</p>{" "}
+            <a data-testid="user-email" href={`mailto:${user.email}`}>
+              {" "}
+              {user.email}{" "}
+            </a>
           </section>
         ))
       ) : (
