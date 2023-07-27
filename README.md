@@ -25,5 +25,5 @@ when success: terminal will give you an URL. Usually: http://127.0.0.1:5173/
 for testing:
 
 ```bash
-npm run dev
+npm run test
 ```
