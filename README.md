@@ -7,13 +7,13 @@
 for installing necessary dependencies:
 
 ```bash
-pip npm i
+ npm i
 ```
 
 for development:
 
 ```bash
-pip npm run dev
+npm run dev
 ```
 
 (make sure you are in the right folder before running this command should be: kodprov-james)
@@ -25,5 +25,5 @@ when success: terminal will give you an URL. Usually: http://127.0.0.1:5173/
 for testing:
 
 ```bash
-pip npm run dev
+npm run dev
 ```
