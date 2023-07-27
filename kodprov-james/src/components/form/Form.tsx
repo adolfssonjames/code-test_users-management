@@ -7,7 +7,8 @@ export default function Form() {
     title: "",
     body: "",
   });
-
+  const [validationMessage, setValidationMessage] = useState<string>("");
+  const [successMessage, setSuccessMessage] = useState<string>("");
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -19,22 +20,37 @@ export default function Form() {
   };
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (formData.body.length < 6 || !formData.title) {
+      setValidationMessage(
+        "Username is required. Password should be at least 6 characters."
+      );
+      setSuccessMessage("");
+    } else {
+      postData(formData)
+        .then((response) => {
+          console.log("Response from the API:", response.data);
+          setValidationMessage("");
+          setSuccessMessage("Post successfully created and sent!");
 
-    postData(formData)
-      .then((response) => {
-        // Handle the response from the API
-        console.log("Response from the API:", response.data);
-      })
-      .catch((error) => {
-        // Handle any errors that occurred during the API call
-        console.error("Error:", error);
-        alert("An error occurred. Please try again later.");
-      });
+          setFormData({
+            userId: 1,
+            title: "",
+            body: "",
+          });
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("An error occurred. Please try again later.");
+        });
+    }
   };
   return (
     <div>
       <h2>Login</h2>
-
+      {successMessage && <p style={{ color: "#646cff" }}>{successMessage}</p>}
+      {validationMessage && (
+        <p style={{ color: "#d4281c" }}>{validationMessage}</p>
+      )}
       <section>
         <form onSubmit={handleSubmit}>
           <label htmlFor="title">Username</label>
@@ -46,7 +62,6 @@ export default function Form() {
               name="title"
               value={formData.title}
               onChange={handleChange}
-              required
             />
           </div>
           <label htmlFor="body">Password</label>
@@ -58,7 +73,6 @@ export default function Form() {
               name="body"
               value={formData.body}
               onChange={handleChange}
-              required
             />
           </div>
           <div>
