@@ -16,11 +16,11 @@ for development:
 npm run dev
 ```
 
-(make sure you are in the right folder before running this command should be: kodprov-james)
+Make sure you are in the right folder before running this command
 
-Navigate to the right folder using the command: cd kodprov-james
+Navigate to the right folder using the command: cd " your folder name"
 
-when success: terminal will give you an URL. Usually: http://127.0.0.1:5173/
+When success: terminal will give you an URL. Usually: http://127.0.0.1:5173/
 
 for testing:
 
