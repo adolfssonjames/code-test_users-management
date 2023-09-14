@@ -1,6 +1,6 @@
-# kodprov
+# Code test
 
-# To Get started/ Usage
+## To Get started/ Usage
 
 ## Make sure you run following commands in terminal:
 
